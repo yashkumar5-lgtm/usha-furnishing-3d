@@ -1,0 +1,70 @@
+@import "./variables.css";
+@import "./animations.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--dark);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+}
+
+body::-webkit-scrollbar{
+
+    width:8px;
+}
+
+body::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+}
+
+ul{
+
+    list-style:none;
+}
+
+.container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+}
+
+section{
+
+    padding:120px 0;
+}

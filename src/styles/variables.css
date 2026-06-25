@@ -1,0 +1,41 @@
+:root{
+
+    /* Colors */
+    --primary:#D4AF37;
+    --primary-light:#F4D35E;
+
+    --dark:#050816;
+    --dark-light:#111827;
+    --card:#151A2D;
+
+    --white:#FFFFFF;
+    --text:#E5E7EB;
+    --gray:#9CA3AF;
+
+    /* Gradient */
+
+    --gradient:
+    linear-gradient(
+        135deg,
+        #050816,
+        #111827,
+        #1E293B
+    );
+
+    /* Shadows */
+
+    --shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    --goldShadow:
+    0 0 40px rgba(212,175,55,.35);
+
+    /* Radius */
+
+    --radius:20px;
+
+    /* Transition */
+
+    --transition:.35s ease;
+
+}
