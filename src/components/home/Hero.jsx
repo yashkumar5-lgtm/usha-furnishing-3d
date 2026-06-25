@@ -1,85 +1,100 @@
 import { motion } from "framer-motion";
-
 import Scene3D from "../ui/Scene/Scene3D";
 
 import "../../styles/hero.css";
 
-function Hero(){
+function Hero() {
+  return (
+    <section className="hero">
+      {/* LEFT SIDE */}
 
-    return(
+      <motion.div
+        className="hero-left"
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.p
+          className="hero-tag"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          LUXURY FURNISHING
+        </motion.p>
 
-        <section className="hero">
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          USHA
+          <br />
+          FURNISHING
+        </motion.h1>
 
-            <motion.div
+        <motion.p
+          className="hero-desc"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          Premium Mattresses, Curtains, Cushions, Sofa Furnishing and
+          Custom Home Comfort Solutions crafted with quality,
+          comfort and expert workmanship.
+        </motion.p>
 
-                className="hero-left"
+        <motion.div
+          className="hero-buttons"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+        >
+          <button className="hero-btn hero-btn-primary">
+            Explore Collection
+          </button>
 
-                initial={{opacity:0,x:-100}}
+          <button className="hero-btn hero-btn-secondary">
+            Contact Us
+          </button>
+        </motion.div>
 
-                animate={{opacity:1,x:0}}
+        <motion.div
+          className="hero-stats"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          <div>
+            <h2>15+</h2>
+            <p>Years Experience</p>
+          </div>
 
-                transition={{duration:1}}
+          <div>
+            <h2>5000+</h2>
+            <p>Happy Customers</p>
+          </div>
 
-            >
+          <div>
+            <h2>100%</h2>
+            <p>Custom Made</p>
+          </div>
+        </motion.div>
+      </motion.div>
 
-                <p className="hero-tag">
+      {/* RIGHT SIDE */}
 
-                    LUXURY FURNISHING
-
-                </p>
-
-                <h1 className="hero-title">
-
-                    USHA
-
-                    <br/>
-
-                    FURNISHING
-
-                </h1>
-
-                <p className="hero-desc">
-
-                    Premium Mattresses,
-
-                    Curtains,
-
-                    Cushions,
-
-                    Sofa Furnishing
-
-                    and Custom Home Comfort Solutions.
-
-                </p>
-
-                <div className="hero-buttons">
-
-                    <button className="hero-btn">
-
-                        Explore
-
-                    </button>
-
-                    <button className="hero-btn">
-
-                        Contact
-
-                    </button>
-
-                </div>
-
-            </motion.div>
-
-            <div className="hero-right">
-
-                <Scene3D/>
-
-            </div>
-
-        </section>
-
-    )
-
+      <motion.div
+        className="hero-right"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2 }}
+      >
+        <Scene3D />
+      </motion.div>
+    </section>
+  );
 }
 
 export default Hero;
