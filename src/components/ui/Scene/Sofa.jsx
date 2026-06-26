@@ -1,45 +1,51 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
 function Sofa(props) {
+  const sofaRef = useRef();
 
-    const sofaRef = useRef();
+  const gltf = useGLTF("/models/sofa.glb");
 
-    const gltf = useGLTF("/models/sofa.glb");
+  useEffect(() => {
+    gltf.scene.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
 
-    useFrame((state) => {
-
-        const time = state.clock.getElapsedTime();
-
-        if (sofaRef.current) {
-
-            // Floating animation
-            sofaRef.current.position.y = Math.sin(time) * 0.15;
-
-            // Slow rotation
-            sofaRef.current.rotation.y = Math.sin(time * 0.4) * 0.25;
-
+        if (child.material) {
+          child.material.metalness = 0.25;
+          child.material.roughness = 0.55;
+          child.material.envMapIntensity = 1.4;
         }
-
+      }
     });
+  }, [gltf]);
 
-    return (
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
 
-        <primitive
+    if (!sofaRef.current) return;
 
-            ref={sofaRef}
+    // Floating animation
+    sofaRef.current.position.y = Math.sin(time * 1.2) * 0.12;
 
-            object={gltf.scene}
+    // Smooth rotation
+    sofaRef.current.rotation.y = Math.sin(time * 0.35) * 0.18;
 
-            {...props}
+    // Gentle breathing scale
+    const scale = 1 + Math.sin(time * 1.2) * 0.01;
 
-            scale={1}
+    sofaRef.current.scale.set(scale, scale, scale);
+  });
 
-        />
-
-    );
-
+  return (
+    <primitive
+      ref={sofaRef}
+      object={gltf.scene}
+      {...props}
+    />
+  );
 }
 
 export default Sofa;

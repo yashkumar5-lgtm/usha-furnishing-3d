@@ -1,0 +1,9 @@
+.section-container{
+
+    width:min(90%,1300px);
+
+    margin:0 auto;
+
+    position:relative;
+
+}
