@@ -4,6 +4,7 @@ import Products from "../components/home/Products";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import Process from "../components/home/Process";
 import Gallery from "../components/home/Gallery";
+import Contact from "../components/home/Contact";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <WhyChooseUs />
       <Process />
       <Gallery />
+      <Contact />
     </>
   );
 }
