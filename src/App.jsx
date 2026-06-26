@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/common/Navbar";
+import FloatingWhatsApp from "./components/common/FloatingWhatsApp";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -13,29 +13,14 @@ function App() {
     <>
       <Navbar />
 
-      <AnimatePresence mode="wait">
-        <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
 
-          <Route
-            path="/about"
-            element={<About />}
-          />
-
-          <Route
-            path="/products"
-            element={<Products />}
-          />
-
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
-        </Routes>
-      </AnimatePresence>
+      <FloatingWhatsApp />
     </>
   );
 }
