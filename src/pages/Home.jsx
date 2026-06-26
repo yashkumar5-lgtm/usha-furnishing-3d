@@ -5,17 +5,19 @@ import WhyChooseUs from "../components/home/WhyChooseUs";
 import Process from "../components/home/Process";
 import Gallery from "../components/home/Gallery";
 import Contact from "../components/home/Contact";
+import Footer from "../components/common/Footer";
 
 function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Products />
-      <WhyChooseUs />
-      <Process />
-      <Gallery />
-      <Contact />
+    <Hero />
+    <About />
+    <Products />
+    <WhyChooseUs />
+    <Process />
+    <Gallery />
+    <Contact />
+    <Footer />
     </>
   );
 }
