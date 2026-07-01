@@ -1,60 +1,104 @@
-import { NavLink } from "react-router-dom";
-
 import "../../styles/navbar.css";
 
 function Navbar() {
 
-    return (
+  const scrollToSection = (sectionId) => {
 
-        <header className="navbar">
+    const section = document.getElementById(sectionId);
 
-            <div className="nav-container">
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
 
-                <div className="logo">
+  };
 
-                    <h2>USHA</h2>
+  return (
 
-                    <span>FURNISHING & GADI KARKHANA</span>
+    <header className="navbar">
 
-                </div>
+      <div className="nav-container">
 
-                <nav>
+        <div
+          className="logo"
+          onClick={() => window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          })}
+          style={{ cursor: "pointer" }}
+        >
 
-                    <ul className="menu">
+          <h2>USHA</h2>
 
-                        <li>
-                            <NavLink to="/">
-                                Home
-                            </NavLink>
-                        </li>
+          <span>FURNISHING & GADI KARKHANA</span>
 
-                        <li>
-                            <NavLink to="/about">
-                                About
-                            </NavLink>
-                        </li>
+        </div>
 
-                        <li>
-                            <NavLink to="/products">
-                                Products
-                            </NavLink>
-                        </li>
+        <nav>
 
-                        <li>
-                            <NavLink to="/contact">
-                                Contact
-                            </NavLink>
-                        </li>
+          <ul className="menu">
 
-                    </ul>
+            <li>
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                  });
+                }}
+              >
+                Home
+              </a>
+            </li>
 
-                </nav>
+            <li>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("about");
+                }}
+              >
+                About
+              </a>
+            </li>
 
-            </div>
+            <li>
+              <a
+                href="#products"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("products");
+                }}
+              >
+                Products
+              </a>
+            </li>
 
-        </header>
+            <li>
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("contact");
+                }}
+              >
+                Contact
+              </a>
+            </li>
 
-    );
+          </ul>
+
+        </nav>
+
+      </div>
+
+    </header>
+
+  );
 
 }
 
