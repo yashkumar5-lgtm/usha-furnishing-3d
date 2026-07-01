@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import Scene3D from "../ui/Scene/Scene3D";
 
 import "../../styles/hero.css";
 
 function Hero() {
   return (
     <section className="hero">
+
       {/* LEFT SIDE */}
 
       <motion.div
@@ -20,7 +20,7 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          LUXURY FURNISHING
+          CUSTOM SOFAS • MATTRESSES • CURTAINS
         </motion.p>
 
         <motion.h1
@@ -40,9 +40,10 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          Premium Mattresses, Curtains, Cushions, Sofa Furnishing and
-          Custom Home Comfort Solutions crafted with quality,
-          comfort and expert workmanship.
+          Transform your home with premium custom sofas,
+          mattresses, curtains, cushions and furnishing
+          solutions crafted with quality materials and
+          expert workmanship.
         </motion.p>
 
         <motion.div
@@ -91,8 +92,13 @@ function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
       >
-        <Scene3D />
+        <img
+          src="/images/blue-corner-sofa.jpeg"
+          alt="Custom Corner Sofa"
+          className="hero-image"
+        />
       </motion.div>
+
     </section>
   );
 }

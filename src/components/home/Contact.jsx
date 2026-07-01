@@ -37,6 +37,15 @@ function Contact() {
 
               <p>🕒 {contact.timing}</p>
 
+              <a
+                href="https://www.google.com/maps/place/Usha+Furnishing+%26+Gadi+Karkhana/@18.5857325,73.9688928,17z"
+                target="_blank"
+                rel="noreferrer"
+                className="directions-btn"
+              >
+                📍 Get Directions
+              </a>
+
             </div>
 
           </motion.div>

@@ -22,9 +22,13 @@
     align-items: center;
 }
 
+/* Brand */
+
 .logo{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .logo h2{
@@ -32,22 +36,33 @@
     font-size: 34px;
     font-family: 'Playfair Display', serif;
     letter-spacing: 2px;
+    line-height: 1;
+    margin: 0;
 }
 
 .logo span{
     color: #aaa;
-    font-size: 11px;
-    letter-spacing: 4px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 4px;
+    white-space: nowrap;
 }
+
+/* Menu */
 
 .menu{
     display: flex;
+    align-items: center;
     gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .menu a{
     color: white;
     font-size: 16px;
+    text-decoration: none;
     position: relative;
     transition: .35s;
 }
@@ -60,7 +75,7 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: -10px;
+    bottom: -8px;
     width: 0;
     height: 2px;
     background: var(--primary);
@@ -71,19 +86,12 @@
     width: 100%;
 }
 
-.menu a.active{
-    color: var(--primary);
-}
+/* Tablet */
 
-.menu a.active::after{
-    width: 100%;
-}
-
-/* Mobile Responsive */
 @media (max-width: 768px){
 
     .navbar{
-        height: 70px;
+        height: 75px;
     }
 
     .nav-container{
@@ -92,12 +100,11 @@
 
     .logo h2{
         font-size: 24px;
-        letter-spacing: 1px;
     }
 
     .logo span{
-        font-size: 8px;
-        letter-spacing: 2px;
+        font-size: 7px;
+        letter-spacing: 1.5px;
     }
 
     .menu{
@@ -109,26 +116,28 @@
     }
 }
 
+/* Mobile */
+
 @media (max-width: 480px){
 
     .navbar{
-        height: 65px;
+        height: 70px;
     }
 
     .logo h2{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .logo span{
-        font-size: 7px;
+        font-size: 6px;
         letter-spacing: 1px;
     }
 
     .menu{
-        gap: 12px;
+        gap: 10px;
     }
 
     .menu a{
-        font-size: 13px;
+        font-size: 12px;
     }
 }

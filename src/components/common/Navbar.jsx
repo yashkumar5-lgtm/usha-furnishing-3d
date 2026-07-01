@@ -22,10 +22,12 @@ function Navbar() {
 
         <div
           className="logo"
-          onClick={() => window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          })}
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            })
+          }
           style={{ cursor: "pointer" }}
         >
 
@@ -75,6 +77,18 @@ function Navbar() {
                 }}
               >
                 Products
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#gallery"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("gallery");
+                }}
+              >
+                Gallery
               </a>
             </li>
 
